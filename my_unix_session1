@@ -1,0 +1,779 @@
+Script started on 2023-06-27 11:04:25+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ pwd
+/home/ashutosh
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ ls
+my_unix_session  my_unix_session1  [0m[01;34mshell-lesson-data[0m  [01;34mubu[0m
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ ls -F
+my_unix_session  my_unix_session1  [0m[01;34mshell-lesson-data[0m/  [01;34mubu[0m/
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be 'always' (default
+                               if omitted), 'auto', or 'never'; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=>@|) to entries
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --hyperlink[=WHEN]     hyperlink file names; WHEN can be 'always'
+                               (default if omitted), 'auto', or 'never'
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage;
+                               used only with -s and per directory totals
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is 'ls' and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+                               (overrides QUOTING_STYLE environment variable)
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            with -l, show time as WORD instead of default
+                               modification time: atime or access or use (-u);
+                               ctime or status (-c); also use specified time
+                               as sort key if --sort=time (newest first)
+      --time-style=TIME_STYLE  time/date format with -l; see TIME_STYLE below
+  -t                         sort by modification time, newest first
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time, newest first
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid '\n' with -q or -b
+      --help     display this help and exit
+      --version  output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report ls translation bugs to <https://translationproject.org/team/>
+Full documentation at: <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ ls [K[K[Kman ls
+[?1049h[22;0;0t[?1h=LS(1)                                               User Commands                                               LS(1)[m
+[m
+[1mNAME[0m[m
+       ls - list directory contents[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mls[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       List  information  about the FILEs (the current directory by default).  Sort entries alphabetically if none of[m
+       [1m-cftuvSUX[0m nor [1m--sort[0m is specified.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m, [1m--all[0m[m
+              do not ignore entries starting with .[m
+[m
+       [1m-A[0m, [1m--almost-all[0m[m
+              do not list implied . and ..[m
+[m
+       [1m--author[0m[m
+              with [1m-l[0m, print the author of each file[m
+[m
+       [1m-b[0m, [1m--escape[0m[m
+              print C-style escapes for nongraphic characters[m
+[m
+       [1m--block-size[0m=[4mSIZE[24m[m
+              with [1m-l[0m, scale sizes by SIZE when printing them; e.g., '--block-size=M'; see SIZE format below[m
+[m
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ ls -F Desl[Kktop
+ls: cannot access 'Desktop': No such file or directory
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ ls
+my_unix_session  my_unix_session1  [0m[01;34mshell-lesson-data[0m  [01;34mubu[0m
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ cd shell-lesson-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cd ..
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ pwd
+/home/ashutosh
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ pwdcd ..shell-lesson-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls
+[0m[01;34mshell-lesson-data[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -s exercise-data
+ls: cannot access 'exercise-data': No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -s exercise-data[Kcd shell-lesson-datapwd[Kcd ..shell-lesson-datals[K -F Desktop[7Pman lsls --helpF[K[Kpwdscp C:\Users\ashutoshkumar.si\Desktop\shell-lesson-data ashutosh@172.27.139.100:/home/ashutosh[A]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ pwd[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pls -F-help[3Pman lsls -F Desktop[Kcd shell-lesson-data..[K[2Ppwdcd shell-lesson-datals[K -s exercise-data[Kls -s exercise-data[Kcd shell-lesson-datapwd[Kcd ..shell-lesson-datals[K -F Desktop[7Pman lsls --helpF[K[Kpwdscp C:\Users\ashutoshkumar.si\Desktop\shell-lesson-data ashutosh@172.27.139.100:/home/ashutosh[A]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ [Cudo service ssh start[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdpkg-reconfigure openssh-server[14Pservice ssh start[14Pifconfigsudo apt install net-toolsifconfig[Kp addr show[4Pfconfigsudo service ssh statuscp C:\Users\ashutoshkumar.si\Desktop\shell-lesson-data ashutosh@172.27.139.100:/home/ashutosh[A]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ [Cudo service ssh status[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pifconfigp addr show[4Pfconfigsudo apt install net-toolsifconfig[Ksudo service ssh startdpkg-reconfigure openssh-server[14Pservice ssh startcp C:\Users\ashutoshkumar.si\Desktop\shell-lesson-data ashutosh@172.27.139.100:/home/ashutosh[A]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ pwd[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pls -F-help[3Pman lsls -F Desktop[Kcd shell-lesson-data..[K[2Ppwdcd shell-lesson-datals[K -s exercise-data[Kcp -r /mnt/c/Users/ashutoshkumar.si/Desktop/shell-lesson-data/ .e .x .e .r .c .i .s .e .- .d .a .t .a ./ .
+cp: cannot stat '/mnt/c/Users/ashutoshkumar.si/Desktop/shell-lesson-data/exercise-data/': No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -S exercise-data
+ls: cannot access 'exercise-data': No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -S exercise-datacp -r /mnt/c/Users/ashutoshkumar.si/Desktop/shell-lesson-data/exercise-data/ .[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P .[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P .[1P[1P[1P[1P[1P[1P[1P[1P .[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P .[1P[1P[1P[1P[1P[1P .[1P[1P .[2@^[[2@[C[1P[1P[2P[C[C"C:\Users\as .hutoshku .mar.si\D .esktop\ .shell-le .sson-dat .a\shell- .lesson-d .[A]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cata\exer .cise-dat .a" .[1P .[K[A]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cp -r /mnt/"C:\Users\ashutoshkumar.si\Desktop\shell-lesson-data\shell-lesson-data\exercise-data .[1P[1P[1P[C[1P[1@c[1@/[C[C[C[C[C[C[1P[1@/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@/[C[C[C[C[C[C[C[C[1P[1@/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@/[C[C[C[C[C[C[C[C[C[C[C[C[C/ .
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -s exercise-data
+total 20
+4 [0m[01;34malkanes[0m  4 [01;34manimal-counts[0m  4 [01;34mcreatures[0m  4 [01;32mnumbers.txt[0m  4 [01;34mwriting[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -s exercise-data[1P exercise-dataS exercise-data
+[0m[01;34malkanes[0m  [01;34manimal-counts[0m  [01;34mcreatures[0m  [01;34mwriting[0m  [01;32mnumbers.txt[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ ls -F /
+[0m[01;36mbin[0m@  [01;34mboot[0m/  [01;34mdev[0m/  [01;34metc[0m/  [01;34mhome[0m/  [01;32minit[0m*  [01;36mlib[0m@  [01;36mlib32[0m@  [01;36mlib64[0m@  [01;36mlibx32[0m@  [01;34mlost+found[0m/  [01;34mmedia[0m/  [01;34mmnt[0m/  [01;34mopt[0m/  [01;34mproc[0m/  [01;34mroot[0m/  [01;34mrun[0m/  [01;36msbin[0m@  [01;34msnap[0m/  [01;34msrv[0m/  [01;34msys[0m/  [30;42mtmp[0m/  [01;34musr[0m/  [01;34mvar[0m/
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ pwd
+/home/ashutosh/shell-lesson-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cd exercise-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd writing
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls -F
+[0m[01;32mLittleWomen.txt[0m*  [01;32mhaiku.txt[0m*
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir thesis
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls -F
+[0m[01;32mLittleWomen.txt[0m*  [01;32mhaiku.txt[0m*  [01;34mthesis[0m/
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ ls -F thesis
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ cd thesis
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ nano draft.txt
+[?2004h[?1049h[22;0;0t[1;43r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[41;79H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                                                   draft.txt                                                                              [1;167H(B[m[42d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43d(B[0;7m^X(B[m Exit[43;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[41d[2d[39;49m(B[m[?12l[?25h[?25l[1;159H(B[0;7mModified(B[m[2dH[?12l[?25h[?25li[?12l[?25h[?25li[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25lA[?12l[?25h[?25ls[?12l[?25h[?25lh[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[?25lo[?12l[?25h[?25ls[?12l[?25h[?25lh[?12l[?25h[?25lm[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lK[?12l[?25h[?25lu[?12l[?25h[?25lm[41d[K[2;25H[?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lS[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lf[?12l[?25h[?25l [?12l[?25h[?25lg[?12l[?25h[?25lj[?12l[?25h[?25l [?12l[?25h[?25lh[?12l[?25h[?25l[3d[?12l[?25h[?25lI[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25lm[?12l[?25h[?25l [?12l[?25h[?25lw[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25lk[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25lT[?12l[?25h[?25li[?12l[?25h[?25lg[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lA[?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ly[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lc[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lj[?12l[?25h[?25lo[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25le[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lT[?12l[?25h[?25li[?12l[?25h[?25lg[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lA[?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ly[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lc[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25la[?12l[?25h[?25ls[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25l [?12l[?25h[?25lM[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25lo[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25l[41;78H(B[0;7m[ Writing... ](B[m[1;159H(B[0;7m        (B[m[41;76H(B[0;7m[ Wrote 2 lines ](B[m[3;36H[?12l[?25h[?25l[41d[J[43d[?12l[?25h[43;1H[?1049l[23;0;0t[?1l>[?2004l]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ ls
+draft.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ touch my_file.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ ls
+draft.txt  my_file.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ rm my_file.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ ls
+draft.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing/thesis[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing/thesis[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mv thesis /draft.txt thesis/quotes.txt
+mv: target 'thesis/quotes.txt' is not a directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ mkdir quotes.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcp quotes.txt thesis/quotations.txt
+cp: cannot stat 'quotes.txt': No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ pwd
+/home/ashutosh/shell-lesson-data/exercise-data/writing
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ re [K[Km -r thesis
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/writing[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ mkdir backup
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cp creatures/minotaur.dat creatures/unicorn.dat backup/
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd creatures
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ la[Ks -F
+[0m[01;32mbasilisk.dat[0m*  [01;32mminotaur.dat[0m*  [01;32municorn.dat[0m*
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ cp minotaur.dat unicorn.dat basilisk.dat
+cp: target 'basilisk.dat' is not a directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/creatures[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd alkanes
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ ls *t??ne.pdb
+[0m[01;32methane.pdb[0m  [01;32mmethane.pdb[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ ls -F
+[0m[01;32mcubane.pdb[0m*  [01;32methane.pdb[0m*  [01;32mmethane.pdb[0m*  [01;32moctane.pdb[0m*  [01;32mpentane.pdb[0m*  [01;32mpropane.pdb[0m*
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ wc cubane.pdb
+  20  156 1158 cubane.pdb
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ wc *.pdb
+  20  156 1158 cubane.pdb
+  12   84  622 ethane.pdb
+   9   57  422 methane.pdb
+  30  246 1828 octane.pdb
+  21  165 1226 pentane.pdb
+  15  111  825 propane.pdb
+ 107  819 6081 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ wc -l *.pdb
+  20 cubane.pdb
+  12 ethane.pdb
+   9 methane.pdb
+  30 octane.pdb
+  21 pentane.pdb
+  15 propane.pdb
+ 107 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ wc -l *.pdb > lengths.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ ls lengths.txt
+lengths.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ cat lenghts.txt
+cat: lenghts.txt: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ cat lenghts.txt[1Pts.txt[Chs.txt
+  20 cubane.pdb
+  12 ethane.pdb
+   9 methane.pdb
+  30 octane.pdb
+  21 pentane.pdb
+  15 propane.pdb
+ 107 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd numbers.txt
+bash: cd: numbers.txt: Not a directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd alkanes
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ sort -n leb[Kngths.txt
+   9 methane.pdb
+  12 ethane.pdb
+  15 propane.pdb
+  20 cubane.pdb
+  21 pentane.pdb
+  30 octane.pdb
+ 107 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ sort -n lengths.txt > sorted-lengths.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ head -n 1 sorted-lengths.txt
+   9 methane.pdb
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ echo The echo commands print the text
+The echo commands print the text
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ echo hello > testfile01.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ echo hello > testfile01.txt[C> testfile01.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd animals[K-counts
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ ,cd [K[K[K[Kcd animal.csv
+bash: cd: animal.csv: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cd animal.csvs.csv[C[C[C[C
+bash: cd: animals.csv: Not a directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ ls -F
+[0m[01;32manimals.csv[0m*
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ ls
+[0m[01;32manimals.csv[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cd animals.csv
+bash: cd: animals.csv: Not a directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ sort -n lengths.txt | head -n 1
+sort: cannot read: lengths.txt: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd ..sort -n lengths.txt | head -n 1
+sort: cannot read: lengths.txt: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ sort -n lengths.txt | head -n 1cd ..[Ksort -n lengths.txt | head -n 1[17Pcd animals.csvls[K -Fcd animals.csv[1P.csv-counts..[Kecho hello >> testfile01.txt[1P testfile01.txtThe echo commands print the text[9Phead -n 1 sorted-lengths.txt[12@sort -n lengths.txt >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[9Pcd alkanes
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ cd alkanessort -n lengths.txt | head -n 1
+   9 methane.pdb
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ wc -l *.pdb | sort -n
+   9 methane.pdb
+  12 ethane.pdb
+  15 propane.pdb
+  20 cubane.pdb
+  21 pentane.pdb
+  30 octane.pdb
+ 107 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/alkanes[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd animal-counts
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt[K[A]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt[K]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt[K[A]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data/animal-counts[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data/animal-counts[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd .
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/exercise-data[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cd north-pacific-gyre
+bash: cd: north-pacific-gyre: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cp -r/mnt/c"C:\Users\ashutoshkumar.si\Desktop\shell-lesson-data\shell-lesson-data\north-pacific-gyre"[K[1Pnorth-pacific-gyre/north-pacific-gyre[1Pshell-lesson-data/north-pacific-gyre/shell-lesson-data/north-pacific-gyre[C[1Pshell-lesson-data/shell-lesson-data/north-pacific-gyre/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1PDesktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1Pashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1PUsers/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[C[1P/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1P/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1P/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1P/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[1PUsers/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/e[1Pe[C/ .
+cp: invalid option -- '/'
+Try 'cp --help' for more information.
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cp -r/mnt/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre/ .[C[1@c[1@/
+cp: invalid option -- '/'
+Try 'cp --help' for more information.
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cd ..
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ cd ..p -r/mnt/c/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre/ .[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd ..[K[K[K[K[K[Kcp -r /mnt/c/Users/ashutoshkumar.si/Desktop/shell-lesson-data/shell-lesson-data/north-pacific-gyre/ .
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ pwd
+/home/ashutosh
+]0;ashutosh@TIGER01220: ~[01;32mashutosh@TIGER01220[00m:[01;34m~[00m$ cd shell-lession[K[K[Kon-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cd north-pacific-gyre
+bash: cd: north-pacific-gyre: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data[00m$ cd shell-lessio[K[Kon-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data[00m$ d[Kcd not[Krth-pacific-gyre
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ ls
+[0m[01;32mNENE01729A.txt[0m  [01;32mNENE01736A.txt[0m  [01;32mNENE01751B.txt[0m  [01;32mNENE01843A.txt[0m  [01;32mNENE01971Z.txt[0m  [01;32mNENE01978B.txt[0m  [01;32mNENE02040A.txt[0m  [01;32mNENE02040Z.txt[0m  [01;32mNENE02043B.txt[0m  [01;32mgoostats.sh[0m
+[01;32mNENE01729B.txt[0m  [01;32mNENE01751A.txt[0m  [01;32mNENE01812A.txt[0m  [01;32mNENE01843B.txt[0m  [01;32mNENE01978A.txt[0m  [01;32mNENE02018B.txt[0m  [01;32mNENE02040B.txt[0m  [01;32mNENE02043A.txt[0m  [01;32mgoodiff.sh[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ wc -l *.txt
+  300 NENE01729A.txt
+  300 NENE01729B.txt
+  300 NENE01736A.txt
+  300 NENE01751A.txt
+  300 NENE01751B.txt
+  300 NENE01812A.txt
+  300 NENE01843A.txt
+  300 NENE01843B.txt
+  300 NENE01971Z.txt
+  300 NENE01978A.txt
+  300 NENE01978B.txt
+  240 NENE02018B.txt
+  300 NENE02040A.txt
+  300 NENE02040B.txt
+  300 NENE02040Z.txt
+  300 NENE02043A.txt
+  300 NENE02043B.txt
+ 5040 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ wc -l *.txt | sort -n | head -n 5
+  240 NENE02018B.txt
+  300 NENE01729A.txt
+  300 NENE01729B.txt
+  300 NENE01736A.txt
+  300 NENE01751A.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ la [K[Ks *Z.txt
+[0m[01;32mNENE01971Z.txt[0m  [01;32mNENE02040Z.txt[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data[00m$ cd exercise-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data[00m$ ls
+[0m[01;34malkanes[0m  [01;34manimal-counts[0m  [01;34mcreatures[0m  [01;32mnumbers.txt[0m  [01;34mwriting[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data[00m$ cd creatures
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[00m$ head -n 5 basilisk.dat minotaur.dat unicorn.dat
+==> basilisk.dat <==
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+CCCCAACGAG
+GAAACAGATC
+
+==> minotaur.dat <==
+COMMON NAME: minotaur
+CLASSIFICATION: bos hominus
+UPDATED: 1765-02-17
+CCCGAAGGAC
+CGACATCTCT
+
+==> unicorn.dat <==
+COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+AGCCGGGTCG
+CTTTACCTTA
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[00m$ for filename in basilisk.dat minotaur.dat unicorn.dat
+> > do
+bash: syntax error near unexpected token `>'
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[00m$ >     echo $filename
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[00m$ >     head -n 2 $filename | tail -n 1
+-n: command not found
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[00m$ > done[K[K[K[K[K[Kfor filename in basilisk.dat minotaur.dat unicorn.dat
+> do
+> 
+Display all 6684 possibilities? (y or n)
+!                                                                               e2mmpstatus
+./                                                                              e2scrub
+.nonadmin                                                                       e2scrub_all
+07409496-a423-4a3e-b620-2cfb01a9318d_HyperV-ComputeNetwork.dll                  e2undo
+0ae3b998-9a38-4b72-a4c4-06849441518d_Servicing-Stack.dll                        e4crypt
+2to3-script.py                                                                  e4defrag
+2to3.exe                                                                        eShims.dll
+4545ffe2-0dc4-4df4-9d02-299ef204635e_hvsocket.dll                               eUICCsCSP.dll
+69fe178f-26e7-43a9-aa7d-2b616b672dde_eventlogservice.dll                        eaimeapi.mof
+6bea57fb-8dfb-4177-9ae8-42e8b3529933_RuntimeDeviceInstall.dll                   eapp3hst.dll
+:                                                                               eappcfg.dll
+@AdvancedKeySettingsNotification.png                                            eappcfgui.dll
+@AppHelpToast.png                                                               eappgnui.dll
+@AudioToastIcon.png                                                             eapphost.dll
+@BackgroundAccessToastIcon.png                                                  eappprxy.dll
+@EnrollmentToastIcon.png                                                        eapprovp.dll
+@StorageSenseToastIcon.png                                                      eapputil.dll
+@VpnToastIcon.png                                                               eapsimextdesktop.dll
+@WLOGO_96x96.png                                                                eapsvc.dll
+@WindowsHelloFaceToastIcon.png                                                  easconsent.dll
+@WindowsUpdateToastIcon.contrast-black.png                                      easinvoker.exe
+@WindowsUpdateToastIcon.contrast-white.png                                      easinvoker.proxystub.dll
+@WindowsUpdateToastIcon.png                                                     easwrt.dll
+@WirelessDisplayToast.png                                                       eatmydata
+@bitlockertoastimage.png                                                        ebtables
+@edptoastimage.png                                                              ebtables-nft
+@facial-recognition-windows-hello.gif                                           ebtables-nft-restore
+@language_notification_icon.png                                                 ebtables-nft-save
+@optionalfeatures.png                                                           ebtables-restore
+ACPBackgroundManagerPolicy.dll                                                  ebtables-save
+AJRouter.dll                                                                    ec2metadata
+APHostClient.dll                                                                echo
+APHostRes.dll                                                                   ed
+APHostService.dll                                                               edgeIso.dll
+APMon.dll                                                                       edgeangle.dll
+APMonUI.dll                                                                     edgehtml.dll
+ARP.EXE                                                                         edit
+AUDIOKSE.dll                                                                    editor
+AarSvc.dll                                                                      editres
+AboutSettingsHandlers.dll                                                       edpauditapi.dll
+AboveLockAppHost.dll                                                            edpcsp.dll
+AcGenral.dll                                                                    edpnotify.exe
+--More--[KAcLayers.dll                                                                    edptask.dll
+AcSpecfc.dll                                                                    edputil.dll
+AcWinRT.dll                                                                     eeprov.dll
+AcXtrnal.dll                                                                    eeutil.dll
+AccountsRt.dll                                                                  efsadu.dll
+ActionCenter.dll                                                                efscore.dll
+ActionCenterCPL.dll                                                             efsext.dll
+ActionQueue.dll                                                                 efslsaext.dll
+ActivationClient.dll                                                            efssvc.dll
+ActivationManager.dll                                                           efsui.exe
+ActivationVdev.dll                                                              efsutil.dll
+ActiveHours.png                                                                 efswrt.dll
+ActiveSyncCsp.dll                                                               egrep
+ActiveSyncProvider.dll                                                          eject
+AdaptiveCards.dll                                                               elif
+AddressParser.dll                                                               els.dll
+AdmTmpl.dll                                                                     elsTrans.dll
+AdvancedEmojiDS.dll                                                             else
+AgentService.exe                                                                elshyph.dll
+AgentWmi.mof                                                                    elslad.dll
+AgentWmiUninstall.mof                                                           embeddedlockdownwmi.mof
+AggregatorHost.exe                                                              embeddedlockdownwmi_Uninstall.mof
+Analog.Shell.Broker.dll                                                         embeddedmodesvc.dll
+AnalogCommonProxyStub.dll                                                       embeddedmodesvcapi.dll
+ApiSetHost.AppExecutionAlias.dll                                                enable
+AppContracts.dll                                                                enc2xs
+AppExtension.dll                                                                encapi.dll
+AppHostRegistrationVerifier.exe                                                 encguess
+AppIdPolicyEngineApi.dll                                                        energy.dll
+AppInstallerBackgroundUpdate.exe                                                energyprov.dll
+AppInstallerPrompt.Desktop.dll                                                  energytask.dll
+AppListBackupLauncher.dll                                                       enrollmentapi.dll
+AppLockerCSP.dll                                                                enterprisecsps.dll
+AppManagementConfiguration.dll                                                  enterpriseetw.dll
+AppMon.dll                                                                      enterpriseresourcemanager.dll
+AppReadiness.dll                                                                env
+AppResolver.dll                                                                 envsubst
+AppVCatalog.dll                                                                 eqn
+AppVClient.exe                                                                  eqossnap.dll
+AppVClientPS.dll                                                                era_check
+AppVDllSurrogate.exe                                                            era_dump
+AppVEntStreamingManager.dll                                                     era_invalidate
+--More--[KAppVEntSubsystemController.dll                                                  era_restore
+AppVEntSubsystems64.dll                                                         es.dll
+AppVEntVirtualization.dll                                                       esac
+AppVFileSystemMetadata.dll                                                      esent.dll
+AppVIntegration.dll                                                             esentprf.dll
+AppVManifest.dll                                                                esentutl.exe
+AppVNice.exe                                                                    esevss.dll
+AppVOrchestration.dll                                                           esimtool.exe
+AppVPolicy.dll                                                                  esrb.rs
+AppVPublishing.dll                                                              esscli.dll
+AppVReporting.dll                                                               ethtool
+AppVScripting.dll                                                               eudcedit.exe
+AppVSentinel.dll                                                                eval
+AppVShNotify.exe                                                                eventcls.dll
+AppVStreamMap.dll                                                               eventcreate.exe
+AppVStreamingUX.dll                                                             eventvwr.exe
+AppVTerminator.dll                                                              eventvwr.msc
+AppXApplicabilityBlob.dll                                                       evr.dll
+AppXDeploymentClient.dll                                                        ex
+AppXDeploymentExtensions.desktop.dll                                            exec
+AppXDeploymentExtensions.onecore.dll                                            execmodelproxy.dll
+AppXDeploymentServer.dll                                                        exit
+Apphlpdm.dll                                                                    expand
+ApplicationControlCSP.dll                                                       expand.exe
+ApplicationFrame.dll                                                            expiry
+ApplicationFrameHost.exe                                                        explorer.exe
+ApplySettingsTemplateCatalog.exe                                                export
+ApplyTrustOffline.exe                                                           expr
+AppointmentActivation.dll                                                       extrac32.exe
+AppointmentApis.dll                                                             f1db7d81-95be-4911-935a-8ab71629112a_HyperV-IsolatedVM.dll
+ApproveChildRequest.exe                                                         f3ahvoas.dll
+AppvClientEventLog.dll                                                          f989b52d-f928-44a3-9bf1-bf0c1da6a0d6_HyperV-DeviceVirtualization.dll
+AppxAllUserStore.dll                                                            facecredentialprovider.dll
+AppxApplicabilityEngine.dll                                                     factor
+AppxPackaging.dll                                                               faillock
+AppxProvisioning.xml                                                            faillog
+AppxSip.dll                                                                     fallocate
+AppxStreamingDataSourcePS.dll                                                   false
+AppxSysprep.dll                                                                 fastprox.dll
+AssignedAccessCsp.dll                                                           fatlabel
+AssignedAccessGuard.exe                                                         fc
+AssignedAccessManager.dll                                                       fc.exe
+--More--[KAssignedAccessRuntime.dll                                                       fclip.exe
+AssignedAccessShellProxy.dll                                                    fcon.dll
+AtBroker.exe                                                                    fdBth.dll
+AttestationWmiProvider.dll                                                      fdBthProxy.dll
+AttestationWmiProvider.mof                                                      fdPHost.dll
+AttestationWmiProvider_Uninstall.mof                                            fdPHost.mof
+AudioEndpointBuilder.dll                                                        fdPnp.dll
+AudioEng.dll                                                                    fdProxy.dll
+AudioHandlers.dll                                                               fdSSDP.dll
+AudioSes.dll                                                                    fdSSDP.mof
+AudioSrvPolicyManager.dll                                                       fdWCN.dll
+AuditNativeSnapIn.dll                                                           fdWNet.dll
+AuditPolicyGPInterop.dll                                                        fdWNet.mof
+AuditRsop.mof                                                                   fdWSD.dll
+AuthBroker.dll                                                                  fdWSD.mof
+AuthBrokerUI.dll                                                                fde.dll
+AuthExt.dll                                                                     fdeploy.dll
+AuthFWGP.dll                                                                    fdformat
+AuthFWSnapin.dll                                                                fdisk
+AuthFWWizFwk.dll                                                                fdprint.dll
+AuthHost.exe                                                                    fdrespub.mof
+AuthHostProxy.dll                                                               feclient.dll
+AverageRoom.bin                                                                 ffbroker.dll
+AxInstSv.dll                                                                    ffi-7.dll
+AxInstUI.exe                                                                    ffi-8.dll
+AzSqlExt.dll                                                                    ffi.dll
+BCP47Langs.dll                                                                  fg
+BCP47mrm.dll                                                                    fgconsole
+BFE.DLL                                                                         fgrep
+BOOTVID.DLL                                                                     fhcat.dll
+BTAGService.dll                                                                 fhcfg.dll
+BWContextHandler.dll                                                            fhcleanup.dll
+BackgroundMediaPolicy.dll                                                       fhcpl.dll
+BackgroundTransferHost.exe                                                      fhengine.dll
+BamSettingsClient.dll                                                           fhevents.dll
+BarcodeProvisioningPlugin.dll                                                   fhmanagew.exe
+BcastDVRBroker.dll                                                              fhsettingsprovider.dll
+BcastDVRClient.dll                                                              fhshl.dll
+BcastDVRCommon.dll                                                              fhsrchapi.dll
+BdeHdCfg.exe                                                                    fhsrchph.dll
+BdeHdCfgLib.dll                                                                 fhsvc.dll
+BdeSysprep.dll                                                                  fhsvcctl.dll
+--More--[KBdeUISrv.exe                                                                    fhtask.dll
+BingASDS.dll                                                                    fhuxadapter.dll
+BingFilterDS.dll                                                                fhuxapi.dll
+BingMaps.dll                                                                    fhuxcommon.dll
+BingOnlineServices.dll                                                          fhuxgraphics.dll
+BioCredProv.dll                                                                 fhuxpresentation.dll
+BioIso.exe                                                                      fi
+BitLockerCsp.dll                                                                fidocredprov.dll
+BitLockerDeviceEncryption.exe                                                   file
+BitLockerWizard.exe                                                             filefrag
+BitLockerWizardElev.exe                                                         filemgmt.dll
+BitsProxy.dll                                                                   filetrace.mof
+BlbEvents.dll                                                                   finalrd
+BluetoothApis.dll                                                               fincore
+BluetoothDesktopHandlers.dll                                                    find
+BluetoothPairingSystemToastIcon.contrast-black.png                              find.exe
+BluetoothPairingSystemToastIcon.contrast-high.png                               findfs
+BluetoothPairingSystemToastIcon.contrast-white.png                              findmnt
+BluetoothPairingSystemToastIcon.png                                             findnetprinters.dll
+BluetoothSystemToastIcon.contrast-white.png                                     findstr.exe
+BluetoothSystemToastIcon.png                                                    finger.exe
+BootMenuUX.dll                                                                  fingerprintcredential.dll
+BrokerFileDialog.dat                                                            firewallapi.mof
+BrokerFileDialog.dll                                                            fixmapi.exe
+BrokerLib.dll                                                                   fixparts
+BthAvctpSvc.dll                                                                 flock
+BthAvrcp.dll                                                                    fltLib.dll
+BthAvrcpAppSvc.dll                                                              fltMC.exe
+BthMtpContextHandler.dll                                                        fmapi.dll
+BthMtpEnum.mof                                                                  fmaudva.dll
+BthRadioMedia.dll                                                               fmaudvb.dll
+BthTelemetry.dll                                                                fmaudvc.dll
+BthpanContextHandler.dll                                                        fmaudvd.dll
+Bubbles.scr                                                                     fmaudve.dll
+ByteCodeGenerator.exe                                                           fmaudvf.dll
+CBDHSvc.dll                                                                     fmifs.dll
+CHxReadingStringIME.dll                                                         fms.dll
+CIDiag.exe                                                                      fmt
+CIRCoInst.dll                                                                   fodhelper.exe
+CIWmi.dll                                                                       fold
+CIWmi.mof                                                                       fontdrvhost.exe
+COLORCNV.DLL                                                                    fontext.dll
+--More--[K> 
+> breal[Kk
+> done
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/creatures[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data[00m$ cd alkanes
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ ls *.pdb
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ for data [Kfile in *.pdb
+> do
+> ls *.pdb
+> done
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+[0m[01;32mcubane.pdb[0m  [01;32methane.pdb[0m  [01;32mmethane.pdb[0m  [01;32moctane.pdb[0m  [01;32mpentane.pdb[0m  [01;32mpropane.pdb[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ for filename in c*
+> do
+> ls $filename
+> done
+[0m[01;32mcubane.pdb[0m
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ for alkanes in *.pdb
+> do
+> echo $alkanes
+> cat $alkanes > alkanes.pdb
+> done
+cubane.pdb
+ethane.pdb
+methane.pdb
+octane.pdb
+pentane.pdb
+propane.pdb
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ for dsya[K[K[Katafile in *.pdb
+> do
+> cat $datafile >> all.pdb
+> donr[Ke
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data[00m$ ccd [K[K[Kd north-pacific-gyre
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ [K]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ for [K[K[K[Kh[Kfor datafile in NENE*A.txt NENE*B.txt
+> do
+> echo $datafile
+> done
+NENE01729A.txt
+NENE01736A.txt
+NENE01751A.txt
+NENE01812A.txt
+NENE01843A.txt
+NENE01978A.txt
+NENE02040A.txt
+NENE02043A.txt
+NENE01729B.txt
+NENE01751B.txt
+NENE01843B.txt
+NENE01978B.txt
+NENE02018B.txt
+NENE02040B.txt
+NENE02043B.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ for datafile in NENE*A.txt NENE*B.txt
+> do
+> echo $datafile stats-$datafile
+> done
+NENE01729A.txt stats-NENE01729A.txt
+NENE01736A.txt stats-NENE01736A.txt
+NENE01751A.txt stats-NENE01751A.txt
+NENE01812A.txt stats-NENE01812A.txt
+NENE01843A.txt stats-NENE01843A.txt
+NENE01978A.txt stats-NENE01978A.txt
+NENE02040A.txt stats-NENE02040A.txt
+NENE02043A.txt stats-NENE02043A.txt
+NENE01729B.txt stats-NENE01729B.txt
+NENE01751B.txt stats-NENE01751B.txt
+NENE01843B.txt stats-NENE01843B.txt
+NENE01978B.txt stats-NENE01978B.txt
+NENE02018B.txt stats-NENE02018B.txt
+NENE02040B.txt stats-NENE02040B.txt
+NENE02043B.txt stats-NENE02043B.txt
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/north-pacific-gyre[00m$ cd //[K[K..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data[00m$ cd exercise-data
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data[00m$ cd alkanes
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ nano middle.sh
+[?2004h[?1049h[22;0;0t[1;43r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[41;79H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                                                   middle.sh                                                                              [1;167H(B[m[42d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43d(B[0;7m^X(B[m Exit[43;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[41d[2d[39;49m(B[m[?12l[?25h[?25l[1;159H(B[0;7mModified(B[m[2d(B[0;1m[34mhead[35m -n(B[0m[42m [49m(B[m[?12l[?25h[?25l 15 octane.pdb [32m|[39m(B[m (B[0;1m[34mtail[35m -n[41d[39m(B[m[K[2;32H[?12l[?25h[?25l 5[?12l[?25h[?25l[3d[?12l[?25h[?25l[41d(B[0;7mSave modified buffer?                                                                                                                                                   [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [43;18H(B[0;7mC(B[m Cancel[K[41;23H[?12l[?25h[?25l[42d(B[0;7m^G(B[m Get Help[42;43H(B[0;7mM-D(B[m DOS Format[42;85H(B[0;7mM-A(B[m Append[42;127H(B[0;7mM-B(B[m Backup File[43d(B[0;7m^C(B[m Cancel[17G         [43;43H(B[0;7mM-M(B[m Mac Format[43;85H(B[0;7mM-P(B[m Prepend[43;127H(B[0;7m^T(B[m To Files[41d(B[0;7mFile Name to Write: middle.sh(B[m[41;30H[?12l[?25h[?25l[41;77H[1K (B[0;7m[ Cancelled ](B[m[K[42;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos      (B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[41d[3d[?12l[?25h[?25l[41d(B[0;7mSave modified buffer?                                                                                                                                                   [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [43;18H(B[0;7mC(B[m Cancel[K[41;23H[?12l[?25h[?25l[J[43d[?12l[?25h[43;1H[?1049l[23;0;0t[?1l>[?2004l]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ bash middle.sh
+bash: middle.sh: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ wc -l *.pdb | sort -n
+    9 methane.pdb
+   12 ethane.pdb
+   15 alkanes.pdb
+   15 propane.pdb
+   20 cubane.pdb
+   21 pentane.pdb
+   30 octane.pdb
+  122 all.pdb
+  244 total
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ nano sorted.sh
+[?2004h[?1049h[22;0;0t[1;43r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[41;79H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                                                   sorted.sh                                                                              [1;167H(B[m[42d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43d(B[0;7m^X(B[m Exit[43;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[41d[2d[39;49m(B[m[?12l[?25h[?25l[1;159H(B[0;7mModified(B[m[2dx[?12l[?25h[?25l[41d(B[0;7mSave modified buffer?                                                                                                                                                   [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [43;18H(B[0;7mC(B[m Cancel[K[41;23H[?12l[?25h[?25l[J[43d[?12l[?25h[43;1H[?1049l[23;0;0t[?1l>[?2004l]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ wc -l "$@" | sort -n
+^X  exit
+^[[D^[[D^[[D^[[D                1qw
+exit
+
+
+
+
+
+^[[A^[[A^[[A            ^X  !qw
+exit
+
+
+
+
+^C
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ bash sorted.sh *.pdb ../creatures/*.dat
+bash: sorted.sh: No such file or directory
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/alkanes[00m$ cd ..
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data[00m$ cd writing
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ cat haiku.txt
+The Tao that is seen
+Is not the true Tao, until
+You bring fresh toner.
+
+With searching comes loss
+and the presence of absence:
+"My Thesis" not found.
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep not haiku.txt
+Is [01;31m[Knot[m[K the true Tao, until
+"My Thesis" [01;31m[Knot[m[K found.
+Today it is [01;31m[Knot[m[K working
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep not haiku.txt[C[1P haiku.txt[1P haiku.txt[1P haiku.txtt haiku.txth haiku.txtr haiku.txt[1P haiku.txte haiku.txt[C[C[C[C[C[C[C[C[C[C
+Is not [01;31m[Kthe[m[K true Tao, until
+and [01;31m[Kthe[m[K presence of absence:
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -w The haiku.txt
+[01;31m[KThe[m[K Tao that is seen
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -w "is not" haiku.txt
+Today it [01;31m[Kis not[m[K working
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -n "it" haiku.txt
+[32m[K5[m[K[36m[K:[m[KW[01;31m[Kit[m[Kh searching comes loss
+[32m[K9[m[K[36m[K:[m[KYesterday [01;31m[Kit[m[K worked
+[32m[K10[m[K[36m[K:[m[KToday [01;31m[Kit[m[K is not working
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -n -w "the" haiku.txt
+[32m[K2[m[K[36m[K:[m[KIs not [01;31m[Kthe[m[K true Tao, until
+[32m[K6[m[K[36m[K:[m[Kand [01;31m[Kthe[m[K presence of absence:
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$  grep -n -w -i "the" haiku.txt
+[32m[K1[m[K[36m[K:[m[K[01;31m[KThe[m[K Tao that is seen
+[32m[K2[m[K[36m[K:[m[KIs not [01;31m[Kthe[m[K true Tao, until
+[32m[K6[m[K[36m[K:[m[Kand [01;31m[Kthe[m[K presence of absence:
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -n -w -v "the" haiku.txt
+[32m[K1[m[K[36m[K:[m[KThe Tao that is seen
+[32m[K3[m[K[36m[K:[m[KYou bring fresh toner.
+[32m[K4[m[K[36m[K:[m[K
+[32m[K5[m[K[36m[K:[m[KWith searching comes loss
+[32m[K7[m[K[36m[K:[m[K"My Thesis" not found.
+[32m[K8[m[K[36m[K:[m[K
+[32m[K9[m[K[36m[K:[m[KYesterday it worked
+[32m[K10[m[K[36m[K:[m[KToday it is not working
+[32m[K11[m[K[36m[K:[m[KSoftware is like that.
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -r Yesterday .
+[35m[K./haiku.txt[m[K[36m[K:[m[K[01;31m[KYesterday[m[K it worked
+[35m[K./LittleWomen.txt[m[K[36m[K:[m[K"[01;31m[KYesterday[m[K, when Aunt was asleep and I was trying to be as still as a
+[35m[K./LittleWomen.txt[m[K[36m[K:[m[K[01;31m[KYesterday[m[K at dinner, when an Austrian officer stared at us and then
+[35m[K./LittleWomen.txt[m[K[36m[K:[m[K[01;31m[KYesterday[m[K was a quiet day spent in teaching, sewing, and writing in my
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep -E "^.o" haiku.txt
+[01;31m[KYo[m[Ku bring fresh toner.
+[01;31m[KTo[m[Kday it is not working
+[01;31m[KSo[m[Kftware is like that.
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ grep "searching" $(find . -name "*.txt")
+[35m[K./haiku.txt[m[K[36m[K:[m[KWith [01;31m[Ksearching[m[K comes loss
+[35m[K./LittleWomen.txt[m[K[36m[K:[m[Ksitting on the top step, affected to be [01;31m[Ksearching[m[K for her book, but was
+]0;ashutosh@TIGER01220: ~/shell-lesson-data/shell-lesson-data/exercise-data/writing[01;32mashutosh@TIGER01220[00m:[01;34m~/shell-lesson-data/shell-lesson-data/exercise-data/writing[00m$ exit
+exit
+
+Script done on 2023-06-27 21:01:13+05:30 [COMMAND_EXIT_CODE="0"]
